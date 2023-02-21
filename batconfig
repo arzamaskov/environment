@@ -1,0 +1,4 @@
+--theme="Monokai Extended Light"
+--italic-text=always
+--map-syntax ".ignore:Git Ignore"
+--plain
