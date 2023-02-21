@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+echo "Before $(df -h / | tail -1 | awk '{print $4}')"
+echo
+
+npm cache clean -f
+rm -Rf ~/.local/share/Trash/
+
+echo
+echo "After $(df -h / | tail -1 | awk '{print $4}')"

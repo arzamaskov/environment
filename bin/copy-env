@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+# Copy config and scripts to or from repo
+
+if [ "$1" == "system" ]; then
+  mkdir -p ~/.config/bat/
+  mkdir -p ~/.config/git/
+  mkdir -p ~/.config/kitty/
+  cp ~/Dev/environment/zshrc                     ~/.zshrc
+  cp ~/Dev/environment/ripgreprc                 ~/.ripgreprc
+  cp ~/Dev/environment/gitconfig                 ~/.gitconfig
+  cp ~/Dev/environment/gitignore                 ~/.config/git/ignore
+  cp ~/Dev/environment/batconfig                 ~/.config/bat/config
+  cp ~/Dev/environment/kittyconf                 ~/.config/kitty/kitty.conf
+  cp -R ~/Dev/environment/zsh_functions/         ~/.zsh_functions/
+else
+  cp ~/.zshrc                                    ~/Dev/environment/zshrc
+  cp ~/.ripgreprc                                ~/Dev/environment/ripgreprc
+  cp ~/.gitconfig                                ~/Dev/environment/gitconfig
+  cp ~/.config/git/ignore                        ~/Dev/environment/gitignore
+  cp ~/.config/bat/config                        ~/Dev/environment/batconfig
+  cp ~/.config/kitty/kitty.conf                  ~/Dev/environment/kittyconf
+  cp -R ~/.zsh_functions/                        ~/Dev/environment/zsh_functions/
+fi
