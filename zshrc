@@ -41,6 +41,8 @@ export EDITOR=nvim
 
 # Aliases
 export NOTES_DIR="~/.notes/"
+
+# SSH workaround
 alias s="kitty +kitten ssh"
 
 # Open sudo files in nvim
@@ -65,11 +67,14 @@ alias td="cat $NOTES_DIR/TODO.md"
 alias tde="(cd $NOTES_DIR && nvim TODO.md && git add TODO.md && git commit -m 'update TODO')"
 
 #NOTES
-alias nv="(cd $NOTES_DIR && nvim -c 'Goyo' README.md)"
+alias nv="(cd $NOTES_DIR && nvim -c 'Goyo' -c 'VimwikiIndex')"
 alias nu="(cd $NOTES_DIR && git add . && git commit -m 'update notes' && git push origin)"
 
 # Get IP address from console
 alias myip="curl http://ipecho.net/plain; echo"
+
+# Find duplicates
+alias fd=find-duplicates
 
 # Change editor for sudoedit
 export EDITOR=/usr/bin/nvim
