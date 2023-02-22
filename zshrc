@@ -93,15 +93,3 @@ autoload -U git-branch-name
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
-# Find duplicates
-fd () {
-    local path=${1:-.}
-    /usr/bin/find "$path" -type f ! -path "$path/.git/*" -printf "%s\n" \
-        | /usr/bin/sort \
-        | /usr/bin/uniq -d \
-        | /usr/bin/xargs -I{} -n1 /usr/bin/find "$path" -type f -size {}c ! -path "$path/.git/*" -print0 \
-        | /usr/bin/xargs -0 /usr/bin/md5sum \
-        | /usr/bin/sort \
-        | /usr/bin/uniq -w32 --all-repeated=separate
-}
