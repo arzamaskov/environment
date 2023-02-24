@@ -3,30 +3,18 @@ local M = {}
 function M.run(use)
   servers = {
     'tsserver',
-    'ansiblels',
     'bashls',
     'dockerls',
-    'elixirls',
-    'grammarly',
-    'gradle_ls',
-    'graphql',
-    'jdtls',
-    'omnisharp',
-    'pyright',
     'solargraph',
-    'sorbet',
     'sqlls',
-    'sumneko_lua',
+    'lua_ls',
     'stylelint_lsp',
-    'terraformls',
     'vimls',
     'yamlls',
     'html',
     'cssls',
     'eslint',
     'jsonls',
-    'solargraph',
-    'sumneko_lua',
   }
 
   use {

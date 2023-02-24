@@ -79,54 +79,12 @@ return require('packer').startup({
      end
    }
 
-   use {
-      "ellisonleao/gruvbox.nvim",
-      config = function ()
-        require("gruvbox").setup({
-          undercurl = true,
-          italic = true,
-          contrast = "hard"
-        })
-        -- vim.cmd("colorscheme gruvbox")
-      end
-    }
-
-    use {
-      'wuelnerdotexe/vim-enfocado'
-    }
-
-    use { 'marko-cerovac/material.nvim' }
-
     -- Switching between a single-line statement and a multi-line one
     use {
       'AndrewRadev/splitjoin.vim',
       config = function()
        vim.api.nvim_command 'let g:splitjoin_php_method_chain_full = 1'
       end
-    }
-
-    -- DAP (Debug Adapter Protocol)
-    use {
-      'mfussenegger/nvim-dap',
-      config = function()
-        require("dapui").setup()
-      end
-    }
-
-    -- This plugin adds virtual text support to nvim-dap. nvim-treesitter is used to find variable definitions
-    use {
-      'theHamsta/nvim-dap-virtual-text',
-      config = function()
-        require("nvim-dap-virtual-text").setup()
-      end
-    }
-
-    -- UI for nvim-dap
-    use {
-      'rcarriga/nvim-dap-ui',
-      requires = {
-        'mfussenegger/nvim-dap'
-      }
     }
 
     -- Improve user iput interface
@@ -166,38 +124,6 @@ return require('packer').startup({
 
     -- SchemaStore catalog
     use { 'b0o/schemastore.nvim' }
-
-    -- Status line
-    -- use {
-    --   'feline-nvim/feline.nvim',
-    --   after = "nvim-web-devicons",
-    --   config = function()
-    --     -- local ctp_feline = require('catppuccin.groups.integrations.feline')
-    --     require('feline').setup({
-    --       -- preset = 'noicon',
-    --       -- components = ctp_feline.get()
-    --     })
-    --     require('feline').use_theme('default')
-    --   end
-    -- }
-    -- use {
-    --   'nvim-lualine/lualine.nvim',
-    --   requires = {
-    --     'kyazdani42/nvim-web-devicons',
-    --     opt = true
-    --   },
-    --   config = function()
-    --     require('lualine').setup {
-    --       options = {
-    --         -- theme = 'enfocado',
-    --         -- theme = 'onelight',
-    --         disabled_filetypes = {
-    --           'packer', 'NvimTree'
-    --         }
-    --       }
-    --     }
-    --   end
-    -- }
 
     -- Highlight trailing whitespaces and delete them by `:StripWhitespace`
     use { 'ntpeters/vim-better-whitespace' }
@@ -252,12 +178,6 @@ return require('packer').startup({
     use { 'tpope/vim-unimpaired' }
 
     use { 'tpope/vim-liquid' }
-
-    -- Search??
-    use { 'windwp/nvim-spectre' }
-
-    -- Text searcher
-    use { 'dyng/ctrlsf.vim' }
 
     -- Comments
     use {
@@ -344,19 +264,6 @@ return require('packer').startup({
       let g:vimwiki_global_ext = 0
     ]])
 
-    -- VimWiki Github sync
-    -- use { 'michal-h21/vimwiki-sync' }
-    -- vim.cmd([[
-    --   let g:vimwiki_sync_branch = "main"
-    -- ]])
-
-    use { 'alok/notational-fzf-vim' }
-    vim.cmd([[
-      let g:nv_search_paths = ['~/Documents/Knowledge/']
-      let g:nv_create_note_key = 'ctrl-x'
-      let g:nv_default_extension = '.md'
-    ]])
-
     -- Easy motion plugin
     use {
       'phaazon/hop.nvim',
@@ -374,18 +281,6 @@ return require('packer').startup({
         require 'alpha'.setup(require 'alpha.themes.startify'.config)
       end
     }
-
-    -- use {
-    --   'epwalsh/obsidian.nvim',
-    --   config = function ()
-    --     require('obsidian').setup({
-    --       dir = "~/Documents/Knowledge",
-    --       completion = {
-    --         nvim_cmp = true,
-    --       }
-    --     })
-    --   end
-    -- }
 
     -- Focused mode in Vim
     use { 'junegunn/goyo.vim' }
