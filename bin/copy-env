@@ -12,7 +12,7 @@ if [ "$1" == "system" ]; then
   cp ~/Dev/environment/batconfig                 ~/.config/bat/config
   cp ~/Dev/environment/kittyconf                 ~/.config/kitty/kitty.conf
   cp -R ~/Dev/environment/zsh_functions/         ~/.zsh_functions/
-  cp -R ~/Dev/environment/nvim/                  ~/.config/nvim/
+  cp ~/Dev/environment/tool-versions             ~/.tool-versions
 else
   cp ~/.zshrc                                    ~/Dev/environment/zshrc
   cp ~/.ripgreprc                                ~/Dev/environment/ripgreprc
@@ -21,5 +21,5 @@ else
   cp ~/.config/bat/config                        ~/Dev/environment/batconfig
   cp ~/.config/kitty/kitty.conf                  ~/Dev/environment/kittyconf
   cp -R ~/.zsh_functions/                        ~/Dev/environment/zsh_functions/
-  cp -R ~/.config/nvim/                          ~/Dev/environment/nvim/
+  cp ~/.tool-versions                            ~/Dev/environment/tool-versions
 fi
