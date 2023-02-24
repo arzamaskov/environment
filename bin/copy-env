@@ -5,13 +5,14 @@ if [ "$1" == "system" ]; then
   mkdir -p ~/.config/bat/
   mkdir -p ~/.config/git/
   mkdir -p ~/.config/kitty/
+  mkdir -p ~/.zsh_functions/
   cp ~/Dev/environment/zshrc                     ~/.zshrc
   cp ~/Dev/environment/ripgreprc                 ~/.ripgreprc
   cp ~/Dev/environment/gitconfig                 ~/.gitconfig
   cp ~/Dev/environment/gitignore                 ~/.config/git/ignore
   cp ~/Dev/environment/batconfig                 ~/.config/bat/config
   cp ~/Dev/environment/kittyconf                 ~/.config/kitty/kitty.conf
-  cp -R ~/Dev/environment/zsh_functions/         ~/.zsh_functions/
+  cp -R ~/Dev/environment/zsh_functions/*        ~/.zsh_functions/
   cp ~/Dev/environment/tool-versions             ~/.tool-versions
 else
   cp ~/.zshrc                                    ~/Dev/environment/zshrc
@@ -20,6 +21,6 @@ else
   cp ~/.config/git/ignore                        ~/Dev/environment/gitignore
   cp ~/.config/bat/config                        ~/Dev/environment/batconfig
   cp ~/.config/kitty/kitty.conf                  ~/Dev/environment/kittyconf
-  cp -R ~/.zsh_functions/                        ~/Dev/environment/zsh_functions/
+  cp -R ~/.zsh_functions/*                       ~/Dev/environment/zsh_functions/
   cp ~/.tool-versions                            ~/Dev/environment/tool-versions
 fi

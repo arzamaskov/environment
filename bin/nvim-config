@@ -2,9 +2,10 @@
 # Copy config and scripts to or from repo
 
 if [ "$1" == "update" ]; then
-  cp -R ~/Dev/environment/nvim/                  ~/.config/nvim/
+  mkdir -p ~/.config/nvim/
+  cp -R                                              ~/Dev/environment/nvim/*      ~/.config/nvim/
 elif [ "$1" == "backup" ]; then
-  cp -R ~/.config/nvim/                          ~/Dev/environment/nvim/
+  rsync -a --exclude='plugin/packer_compiled.lua'    ~/.config/nvim                ~/Dev/environment/
 else
   echo "Missing option"
 fi
