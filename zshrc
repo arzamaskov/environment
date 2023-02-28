@@ -94,3 +94,9 @@ autoload -U git-branch-name
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+# Set ripgrep as default and `m` option to make multiple selections with <Tab> or <Shift-Tab>
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m'
+fi
