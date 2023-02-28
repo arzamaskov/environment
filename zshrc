@@ -47,6 +47,7 @@ alias s="kitty +kitten ssh"
 
 # Open sudo files in nvim
 alias sv=sudoedit
+alias vim=nvim
 
 # Ripgrep aliases
 alias rgl="rg -l"
@@ -57,7 +58,7 @@ alias glg="log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr
 
 # cd
 alias cdd="cd ~/Downloads"
-alias cdw="cd ~/Work"
+alias cdw="cd ~/Dev"
 
 # Docker aliases
 alias dps='docker ps'
