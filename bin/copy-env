@@ -8,6 +8,7 @@ if [ "$1" == "system" ]; then
   mkdir -p ~/.zsh_functions/
   cp ~/Dev/environment/zshrc                     ~/.zshrc
   cp ~/Dev/environment/ripgreprc                 ~/.ripgreprc
+  cp ~/Dev/environment/rgignore                  ~/.rgignore
   cp ~/Dev/environment/gitconfig                 ~/.gitconfig
   cp ~/Dev/environment/gitignore                 ~/.config/git/ignore
   cp ~/Dev/environment/batconfig                 ~/.config/bat/config
@@ -17,6 +18,7 @@ if [ "$1" == "system" ]; then
 else
   cp ~/.zshrc                                    ~/Dev/environment/zshrc
   cp ~/.ripgreprc                                ~/Dev/environment/ripgreprc
+  cp ~/.rgignore                                 ~/Dev/environment/rgignore
   cp ~/.gitconfig                                ~/Dev/environment/gitconfig
   cp ~/.config/git/ignore                        ~/Dev/environment/gitignore
   cp ~/.config/bat/config                        ~/Dev/environment/batconfig
