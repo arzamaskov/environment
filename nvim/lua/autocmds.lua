@@ -22,6 +22,7 @@ vim.cmd([[
 
 vim.cmd([[
   " au BufRead,BufNewFile *.html set syntax=liquid
-  autocmd TermOpen * setlocal statusline=%{b:term_title}
+  " autocmd TermOpen * setlocal statusline=%{b:term_title}
   au BufRead,BufNewFile .env set syntax=sh
+  au BufRead,BufNewFile .rgignore set syntax=gitignore
 ]])
