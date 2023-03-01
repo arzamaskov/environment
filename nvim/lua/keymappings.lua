@@ -90,3 +90,6 @@ keymap('v', '<leader>jq', '!python -m json.tool<CR>', options)
 -- CtrlSF mappings
 keymap('n', '<C-F>f', ':CtrlSF ', { silent = false })
 keymap('n', '<C-F>t', ':CtrlSFToggle<cr>', options)
+
+-- Documentary
+keymap('n', '<C-K>', ':lua require("neogen").generate()<CR>', options)

@@ -131,10 +131,11 @@ return require('packer').startup({
       config = function()
         require('neogen').setup({
           enabled = true,
-          patterns = {
+          languages = {
             php = {
-              {'class (%S)', ''},
-              {'function (%S)', ''}
+              template = {
+                annotation_convention = "phpdoc"
+              }
             }
           }
         })
