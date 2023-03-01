@@ -97,6 +97,16 @@ function M.run(use)
             },
           },
         },
+        indent = {
+          enable = true,
+          filetypes = {'php'},
+          set = {
+            ['tabstop'] = 4,
+            ['shiftwidth'] = 4,
+            ['softtabstop'] = 4,
+            ['expandtab'] = true,
+          }
+        }
       }
     end
   }
