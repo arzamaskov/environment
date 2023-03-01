@@ -182,18 +182,11 @@ return require('packer').startup({
     -- Improve mappings
     use { 'tpope/vim-unimpaired' }
 
+    -- Jekyll liquid support
     use { 'tpope/vim-liquid' }
 
     -- Comments
-    use {
-      'numToStr/Comment.nvim',
-      config = function ()
-        local ts_comment_integration = require('ts_context_commentstring.integrations.comment_nvim')
-        require('Comment').setup({
-          pre_hook = ts_comment_integration.create_pre_hook(),
-        })
-      end
-    }
+    use { 'tomtom/tcomment_vim' }
 
     -- Refactor plugin
     use {
