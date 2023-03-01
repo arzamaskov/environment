@@ -107,9 +107,6 @@ return require('packer').startup({
     -- Improve repeat using `.`
     use { 'tpope/vim-repeat' }
 
-    -- While Yanking your cursor will not move to the start of the Yanked Text
-    use { 'svban/YankAssassin.vim' }
-
     -- Show a lightbulb in the sign column whenever actions is available
     use {
       'kosayoda/nvim-lightbulb',
