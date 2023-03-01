@@ -132,7 +132,15 @@ return require('packer').startup({
     use {
       'danymat/neogen',
       config = function()
-        require('neogen').setup {}
+        require('neogen').setup({
+          enabled = true,
+          patterns = {
+            php = {
+              {'class (%S)', ''},
+              {'function (%S)', ''}
+            }
+          }
+        })
       end,
       requires = {
         'nvim-treesitter/nvim-treesitter'
@@ -213,21 +221,12 @@ return require('packer').startup({
     }
 
     -- Fzf search
-    use({
+    use {
       'junegunn/fzf',
       run = function() vim.fn["fzf#install"]() end,
-    })
-    use 'junegunn/fzf.vim'
+    }
 
-    vim.cmd([[
-      autocmd VimEnter * command! -nargs=* Rg
-      \ call fzf#vim#grep(
-      \   'rg --column --line-number --no-heading --fixed-strings --ignore-file ~/.rgignore
-      \ --ignore-case --no-ignore --hidden --follow --color "always" '.shellescape(<q-args>), 1,
-      \   <bang>0 ? fzf#vim#with_preview('up:60%')
-      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-      \   <bang>0)
-    ]])
+    use { 'junegunn/fzf.vim' }
 
     -- Git decorations
     use {
@@ -257,13 +256,20 @@ return require('packer').startup({
     use { 'slim-template/vim-slim' }
 
     -- VimWiki
-    use {'vimwiki/vimwiki' }
-    vim.cmd([[
-      let g:vimwiki_list = [{'path': '~/.notes/',
-      \ 'index': 'README',
-      \ 'syntax': 'markdown', 'ext': '.md'}]
-      let g:vimwiki_global_ext = 0
-    ]])
+    use {
+      'vimwiki/vimwiki',
+      config = function()
+        vim.g.vimwiki_list = {
+          {
+            path = '~/.notes/',
+            index = 'README',
+            syntax = 'markdown',
+            ext = '.md'
+          }
+        }
+        vim.g.vimwiki_global_ext = 0
+      end
+    }
 
     -- Easy motion plugin
     use {
@@ -304,7 +310,10 @@ return require('packer').startup({
   end,
 
   config = {
+    -- enable Packer
     enable = true,
+
+    -- configure the display options
     display = {
       open_fn = require('packer.util').float,
     }

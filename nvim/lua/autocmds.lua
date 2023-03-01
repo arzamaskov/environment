@@ -6,23 +6,28 @@ vim.api.nvim_create_autocmd("TextYankPost",
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = { "*.txt", "*.md" },
   command = "setlocal spell spelllang=en_us,ru" })
 
-vim.cmd [[
+vim.cmd ([[
   augroup myfiletypes
     " Clear old autocmds in group
-    " autocmd!
+    autocmd!
     autocmd FileType ruby,eruby,yaml,javascript,typescript set ai sw=2 sts=2 et
     autocmd FileType java,php,smarty set ai sw=4 sts=4 et
+    autocmd BufRead,BufNewFile .env set syntax=sh
+    autocmd BufRead,BufNewFile .rgignore set syntax=gitignore
   augroup END
-]]
 
-vim.cmd([[
-  autocmd! User GoyoEnter Limelight
-  autocmd! User GoyoLeave Limelight!
-]])
+  augroup goyo
+    autocmd! User GoyoEnter Limelight
+    autocmd! User GoyoLeave Limelight!
+  augroup END
 
-vim.cmd([[
-  " au BufRead,BufNewFile *.html set syntax=liquid
-  " autocmd TermOpen * setlocal statusline=%{b:term_title}
-  au BufRead,BufNewFile .env set syntax=sh
-  au BufRead,BufNewFile .rgignore set syntax=gitignore
+  augroup search
+    autocmd VimEnter * command! -nargs=* Rg
+        \ call fzf#vim#grep(
+        \   'rg --column --line-number --no-heading --fixed-strings --ignore-file ~/.rgignore
+        \ --ignore-case --no-ignore --hidden --follow --color "always" '.shellescape(<q-args>), 1,
+        \   <bang>0 ? fzf#vim#with_preview('up:60%')
+        \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+        \   <bang>0)
+  augroup END
 ]])
