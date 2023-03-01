@@ -65,6 +65,11 @@ function M.run(use)
 
       local cmp_config = lsp.defaults.cmp_config({
         sources = sources,
+        completion = {
+          autocomplete = false,
+          completeopt = 'menu,menuone,noinsert',
+          comfirmkey = '<Tab>'
+        },
         -- formatting = {
         --   format = lspkind.cmp_format({
         --     mode = 'symbol', -- show only symbol annotations
@@ -74,6 +79,8 @@ function M.run(use)
         mapping = {
           ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
           ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<C-e'] = cmp.mapping.close(),
         },
       })
 
