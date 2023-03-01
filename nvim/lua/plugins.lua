@@ -187,7 +187,19 @@ return require('packer').startup({
     use { 'tpope/vim-liquid' }
 
     -- Comments
-    use { 'tomtom/tcomment_vim' }
+    use {
+      'numToStr/Comment.nvim',
+      config = function ()
+        require('Comment').setup({
+          comment_empty = false,
+          pre_hook = function()
+            if vim.bo.filetype == 'smarty' then
+              vim.api.nvim_buf_set_option(0, 'commentstring', '{* %s *}')
+            end
+          end,
+        })
+      end
+    }
 
     -- Refactor plugin
     use {
