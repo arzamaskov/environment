@@ -100,3 +100,6 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m'
 fi
+
+# Add vendor binaries in the PATH
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"

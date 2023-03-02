@@ -8,6 +8,7 @@
   l  = "!git pull origin $(git current-branch) --rebase"
   h  = "!git push origin $(git current-branch)"
   lh = "!git l && git h"
+  hist = log --pretty=format:\"%h %ad | %s %d [%an]\" --graph --date=short
 [color]
   diff   = auto
   status = auto
