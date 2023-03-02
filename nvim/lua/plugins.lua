@@ -87,6 +87,30 @@ return require('packer').startup({
       end
     }
 
+    -- DAP (Debug Adapter Protocol)
+    use {
+      'mfussenegger/nvim-dap',
+      config = function()
+        require("dapui").setup()
+      end
+    }
+
+    -- This plugin adds virtual text support to nvim-dap. nvim-treesitter is used to find variable definitions
+    use {
+      'theHamsta/nvim-dap-virtual-text',
+      config = function()
+        require("nvim-dap-virtual-text").setup()
+      end
+    }
+
+    -- UI for nvim-dap
+    use {
+      'rcarriga/nvim-dap-ui',
+      requires = {
+        'mfussenegger/nvim-dap'
+      }
+    }
+
     -- Improve user iput interface
     use {
       'stevearc/dressing.nvim',
