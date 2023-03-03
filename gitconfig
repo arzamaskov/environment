@@ -18,5 +18,6 @@
   editor = nvim
   pager = delta
   excludesfile = ~/.config/git/ignore
+  fileMode = false
 [init]
   defaultBranch = main
