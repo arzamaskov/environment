@@ -42,6 +42,8 @@ export EDITOR=nvim
 # Aliases
 export NOTES_DIR="~/.notes/"
 
+alias clr=clear
+
 # SSH workaround
 alias s="kitty +kitten ssh"
 
