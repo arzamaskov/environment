@@ -2,7 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Zsh theme
-ZSH_THEME="bureau"
+ZSH_THEME="af-magic"
 
 # ZSH options
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
