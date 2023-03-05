@@ -356,3 +356,13 @@ The package **bluez-deprecated** provides deprecated BlueZ utilities that were r
 The bluez-deprecated package is still available in some Linux distributions, including Fedora, to provide compatibility with older Bluetooth devices or applications that require these deprecated tools. However, it's recommended to use the newer BlueZ tools instead whenever possible, as they provide better support for the latest Bluetooth features and security updates.
 
 Reboot.
+
+### Gnome Extensions
+
+- [Alphabetical App Grid GNOME Extension](https://github.com/stuarthayhurst/alphabetical-grid-extension) 
+- [AppIndicator/KStatusNotifierItem support for GNOME Shell](https://github.com/ubuntu/gnome-shell-extension-appindicator) 
+- [Bluetooth Quick Connect](https://github.com/bjarosze/gnome-bluetooth-quick-connect) 
+- [Dash to Dock](https://micheleg.github.io/dash-to-dock/) 
+- [Grand Theft Focus](https://github.com/zalckos/GrandTheftFocus) 
+- [Search Light](https://github.com/icedman/search-light) 
+
