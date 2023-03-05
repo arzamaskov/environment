@@ -2,7 +2,7 @@
 
 ### Preparing
 
-Get fresh [Fedora image](https://getfedora.org/en/workstation/download/){:target="blank"} and write it to the USB drive:
+Get fresh [Fedora image](https://getfedora.org/en/workstation/download/) and write it to the USB drive:
 
 ```sh
 sudo dnf install mediawriter
